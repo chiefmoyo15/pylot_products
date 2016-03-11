@@ -3,6 +3,9 @@
     <link rel="stylesheet" href="/static/css/styles.css" type="text/css">
   </head>
   <body>
-    The best place to start is the "WelcomeController.py" file in app/controllers.
+  {% for name in names: %}
+    <p>{{ name.name }}</p>
+  {% endfor %}
   </body>
+  <a href="/new">New Name</a>
 </html>
