@@ -1,12 +1,22 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Create</title>
+    <title>New</title>
 </head>
 <body>
-<form action = '/create' method="post">
-    <input name="name" type="text"></input>
-    <button>Submti</button>
+{% with messages = get_flashed_messages() %}
+    {% if messages %}
+        {% for message in messages %}
+            <h1 style='color:blue'>{{message}}</h1>
+        {% endfor %}
+    {% endif %}
+{% endwith %}
+<form action = '/products/create' method = 'post'>
+    <p>Product Name:<input name = 'name' type = 'text'></p>
+    <p>Product Description: <textarea name = 'description'></textarea></p>
+    <p>Product Price: <input name = 'price' type = 'number' step='any'></p>
+    <button>Add Product</button>
 </form>
+<a href="/products">Back</a>
 </body>
 </html>

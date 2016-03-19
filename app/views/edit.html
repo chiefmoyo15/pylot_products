@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Edit</title>
+</head>
+<body>
+<form action = "/products/update/{{product['id']}}" method = 'post'>
+    <p>Product Name:<input name = 'name' type = 'text' value= "{{product['name']}}"></p>
+    <p>Product Description: <textarea name = 'description'>{{product['description']}}</textarea></p>
+    <p>Product Price: <input name = 'price' type = 'number' step='any' value= "{{product['price']}}"></p>
+    <button>Edit Product</button>
+</form>
+<a href="/products">Back</a>
+</body>
+</html>
