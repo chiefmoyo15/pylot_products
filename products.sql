@@ -1,8 +1,8 @@
-CREATE DATABASE  IF NOT EXISTS `pylot_deployment` /*!40100 DEFAULT CHARACTER SET latin1 */;
-USE `pylot_deployment`;
+CREATE DATABASE  IF NOT EXISTS `products` /*!40100 DEFAULT CHARACTER SET latin1 */;
+USE `products`;
 -- MySQL dump 10.13  Distrib 5.7.9, for osx10.9 (x86_64)
 --
--- Host: 127.0.0.1    Database: pylot_deployment
+-- Host: 127.0.0.1    Database: products
 -- ------------------------------------------------------
 -- Server version	5.5.42
 
@@ -18,27 +18,30 @@ USE `pylot_deployment`;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `names`
+-- Table structure for table `products`
 --
 
-DROP TABLE IF EXISTS `names`;
+DROP TABLE IF EXISTS `products`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `names` (
+CREATE TABLE `products` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(45) DEFAULT NULL,
+  `description` text,
+  `price` decimal(10,0) DEFAULT NULL,
+  `created_at` datetime DEFAULT NULL,
+  `updated_at` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `names`
+-- Dumping data for table `products`
 --
 
-LOCK TABLES `names` WRITE;
-/*!40000 ALTER TABLE `names` DISABLE KEYS */;
-INSERT INTO `names` VALUES (1,'Kris Ekenes'),(2,'Johnny Appleseed'),(3,'Joe Joe'),(4,'Malisha'),(5,'Really?'),(6,'sweet');
-/*!40000 ALTER TABLE `names` ENABLE KEYS */;
+LOCK TABLES `products` WRITE;
+/*!40000 ALTER TABLE `products` DISABLE KEYS */;
+/*!40000 ALTER TABLE `products` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -50,4 +53,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2016-03-10 17:14:17
+-- Dump completed on 2016-03-20 18:02:38
